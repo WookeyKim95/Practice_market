@@ -37,14 +37,26 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+enum UserType {
+  User
+  Admin
+}
+
 model User {
   id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
   emailVerified DateTime?
   image         String?
+  hashedPassword String?
   accounts      Account[]
   sessions      Session[]
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime @updatedAt
+  userType UserType @default(User)
+
+  favoriteIds String[]
+  products    Product[]
 }
 
 model VerificationToken {
@@ -53,4 +65,18 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Product {
+  id    String  @id @default(cuid())
+  title String
+  description String
+  imageSrc    String
+  category    String
+  userId      String
+  price       Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
