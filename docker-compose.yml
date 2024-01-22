@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   db:
     image: postgres:latest
@@ -7,6 +7,9 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "Ce435D3ea2CCf*2d2-DE-2G13b5Bf53*"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "mydb"
+
     volumes:
       - ./data:/var/lib/postgresql/data
+    

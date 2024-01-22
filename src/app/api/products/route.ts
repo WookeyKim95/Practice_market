@@ -19,8 +19,8 @@ export async function POST(request: Request) {
     } = body;
 
     Object.keys(body).forEach((value) => {
-        if(!body['title']) {
-            NextResponse.error();
+        if(!body[value]) {
+            return NextResponse.error();
         }
     })
     const product = await prisma.product.create({

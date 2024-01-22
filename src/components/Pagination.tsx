@@ -1,11 +1,11 @@
-'use-client'
+'use client'
 import React from 'react'
 import usePagination from '@lucasmogari/react-pagination'
 import PaginationLink from './PaginationLink'
 interface PaginationProps {
     page: number;
-    totalItems: number;
-    perPage: number;
+    totalItems?: number;
+    perPage?: number;
 }
 
 const Pagination = ({page, totalItems, perPage}: PaginationProps) => {
