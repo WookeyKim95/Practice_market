@@ -2,7 +2,8 @@
 const nextConfig = {
     images: {
         domains:[
-            'res.cloudinary.com'
+            'res.cloudinary.com',
+            'via.placeholder.com'
         ]
     }
 };

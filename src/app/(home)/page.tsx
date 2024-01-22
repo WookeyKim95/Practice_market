@@ -4,7 +4,7 @@ import Container from "@/components/Container";
 import EmptyState from "@/components/EmptyState";
 import getCurrentUser from "../actions/getCurrentUser";
 import FloatingButton from "@/components/FloatingButton";
-import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/products/ProductCard";
 import Categories from "@/components/categories/Categories";
 import Pagination from "@/components/Pagination";
 
